@@ -1,5 +1,5 @@
 <?php
-$dbh = new PDO('mysql:host=localhost;port=3306;dbname=MyTwitter;', 'root', 'password' );
+$dbh = new PDO('mysql:host=localhost;port=80;dbname=MyTwitter;', 'axeltwitter', '07072017' );
 
 $stmt=$dbh->prepare("create table if not exists posts(
     id INT PRIMARY KEY AUTO_INCREMENT,

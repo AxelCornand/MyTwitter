@@ -27,7 +27,7 @@
 
 <?php
 session_start();
-$dbh = new PDO('mysql:host=localhost;port=3306;dbname=MyTwitter;', 'root', 'password' );
+$dbh = new PDO('mysql:host=localhost;port=80;dbname=MyTwitter;', 'axeltwitter', '07072017' );
 if (empty($_SESSION['user']['id'])){
     header('src/users/login.php');
 } else {

@@ -60,14 +60,14 @@ if (isset($_SESSION['user'])){
 </html>
 
 <?php
-    $dbh = new PDO('mysql:host=localhost;port=3306;dbname=MyTwitter;', 'root', 'password' );
+    $dbh = new PDO('mysql:host=localhost;port=80;dbname=MyTwitter;', 'axeltwitter', '07072017' );
 $mailco = $_POST['user_mail'];
 $mdpco = $_POST['user_password'];
 
 if (isset($mailco)
     && (isset($mdpco))
 ) {
-    $stmt = $dbh->prepare("SELECT * FROM Users where mail = :mail and password = :password;");
+    $stmt = $dbh->prepare("SELECT * FROM Users where mail = :mail and `password` = :`password`");
     $stmt->execute([":mail" => $mailco, ":password" => $mdpco]);
     $res = $stmt->fetch();
     if ($stmt->errorCode() === '00000' && $res) {

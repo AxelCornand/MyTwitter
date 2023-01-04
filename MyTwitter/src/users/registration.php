@@ -88,14 +88,14 @@ if (isset($_POST['user_firstname'])
     && !empty($_POST['user_mail'])
     && !empty($_POST['user_password'])
     && !empty($_POST['user_gender'])) {
-    $dbh = new PDO('mysql:host=localhost;port=3306;dbname=MyTwitter;', 'root', 'password' );
+        $dbh = new PDO('mysql:host=localhost;port=80;dbname=MyTwitter;', 'axeltwitter', '07072017' );
     $stmt=$dbh->prepare("SELECT mail FROM Users WHERE mail=:mail");
     $stmt->execute([":mail" => $_POST['user_mail']]);
     $user = $stmt->fetch();
     if ($user) {
         echo 'email déja utilisé';
     }else {
-        $stmt = $dbh->prepare("INSERT INTO Users values(null, :firstname, :lastname, :mail, :password, :gender, :date)");
+        $stmt = $dbh->prepare("INSERT INTO Users values(null, :firstname, :lastname, :mail, :`password`, :gender, :`date`)");
         $stmt->bindValue(':firstname', $_POST['user_firstname'], PDO::PARAM_STR);
         $stmt->bindValue(':lastname', $_POST['user_lastname'], PDO::PARAM_STR);
         $stmt->bindValue(':mail', $_POST['user_mail'], PDO::PARAM_STR);
