@@ -67,7 +67,7 @@ $mdpco = $_POST['user_password'];
 if (isset($mailco)
     && (isset($mdpco))
 ) {
-    $stmt = $dbh->prepare("SELECT * FROM Users where mail = :mail and `password` = :`password`");
+    $stmt = $dbh->prepare("SELECT * FROM Users where mail = :mail and password = :password");
     $stmt->execute([":mail" => $mailco, ":password" => $mdpco]);
     $res = $stmt->fetch();
     if ($stmt->errorCode() === '00000' && $res) {

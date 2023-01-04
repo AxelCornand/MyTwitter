@@ -67,6 +67,7 @@
 
     <div  class="button col-2 offset-6">
         <button  type="submit" class="btn btn-primary">Register</button>
+        <a class="btn btn-default" href="login.php" role="button">Connecte toi !</a>
     </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -95,7 +96,7 @@ if (isset($_POST['user_firstname'])
     if ($user) {
         echo 'email déja utilisé';
     }else {
-        $stmt = $dbh->prepare("INSERT INTO Users values(null, :firstname, :lastname, :mail, :`password`, :gender, :`date`)");
+        $stmt = $dbh->prepare("INSERT INTO Users values(null, :firstname, :lastname, :mail, :password, :gender, :date)");
         $stmt->bindValue(':firstname', $_POST['user_firstname'], PDO::PARAM_STR);
         $stmt->bindValue(':lastname', $_POST['user_lastname'], PDO::PARAM_STR);
         $stmt->bindValue(':mail', $_POST['user_mail'], PDO::PARAM_STR);

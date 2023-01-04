@@ -7,13 +7,13 @@
 
 </head>
 <body>
-<form action="#" method="post">
-    <div class="Input text">
-        <label for="text"></label><input type="text" id="text" name="titre" placeholder="Titre">
+<form action="#" method="post" class="text-center mt-5 ">
+    <div class="Input text ">
+        <label for="text"></label><input type="text" id="text"class="border border-primary mb-3" name="titre" placeholder="Titre">
     </div>
-    <div class="Input textarea">
+    <div class="Input textarea form-control-lg ">
         <label>
-            <textarea  name="text" placeholder="Commentaire"></textarea>
+            <textarea  name="text"class="border border-primary" placeholder="Commentaire"></textarea>
         </label>
     </div>
     <div  class="button">
