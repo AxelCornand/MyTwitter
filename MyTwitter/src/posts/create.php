@@ -35,7 +35,7 @@ if (empty($_SESSION['user']['id'])){
         && (!empty($_POST['text'])
             && (isset($_POST['titre'])
                 && (isset($_POST['text']))))) {
-        $stmt = $dbh->prepare ("INSERT INTO posts VALUES ( NULL,:titre, :text,:created_at,:updated_at, :user_id)");
+        $stmt = $dbh->prepare ("INSERT INTO posts VALUES ( NULL,:titre, :text,:created_at,text:updated_at, :user_id)");
         $stmt->bindValue(':titre', $_POST['titre']);
         $stmt->bindValue(':text', $_POST['text']);
         $date = new DateTime('now');
